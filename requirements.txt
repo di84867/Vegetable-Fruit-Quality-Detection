@@ -5,3 +5,5 @@ matplotlib
 scikit-learn
 jupyter
 Pillow
+
+python version 3.10.0
