@@ -23,7 +23,7 @@ model = Sequential([
 model.load_weights('fruits_veg_model.h5')
 
 # Class labels
-class_labels = ['Fresh Fruit', 'Rotten Fruit', 'Fresh Vegetable', 'Rotten Vegetable']
+class_labels = ['Fresh Fruit', 'Fresh Vegetable', 'Rotten Fruit', 'Rotten Vegetable']
 
 # Function to classify an uploaded image
 def classify_image(image_path):

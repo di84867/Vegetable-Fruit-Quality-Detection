@@ -22,7 +22,7 @@ model = Sequential([
 model.load_weights('fruits_veg_model.h5')
 
 # Class labels
-class_labels = ['Fresh Fruit', 'Rotten Fruit', 'Fresh Vegetable', 'Rotten Vegetable']
+class_labels = ['Fresh Fruit', 'Fresh Vegetable', 'Rotten Fruit', 'Rotten Vegetable']
 
 # Start video capturemahabharat ep 140
 cap = cv2.VideoCapture(0)
