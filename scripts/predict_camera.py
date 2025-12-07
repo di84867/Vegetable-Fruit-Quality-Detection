@@ -1,8 +1,6 @@
 import cv2
 import numpy as np
 import tensorflow as tf
-
-# Reconstruct the model architecture
 from tensorflow.keras.applications import MobileNetV2
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, GlobalAveragePooling2D
@@ -15,7 +13,7 @@ model = Sequential([
     GlobalAveragePooling2D(),
     Dense(256, activation='relu'),
     Dropout(0.3),
-    Dense(4, activation='softmax')  # 4 classes
+    Dense(4, activation='softmax')  
 ])
 
 # Load the weights
@@ -24,7 +22,7 @@ model.load_weights('fruits_veg_model.h5')
 # Class labels
 class_labels = ['Fresh Fruit', 'Fresh Vegetable', 'Rotten Fruit', 'Rotten Vegetable']
 
-# Start video capturemahabharat ep 140
+# Start video capture
 cap = cv2.VideoCapture(0)
 
 print("Press 'c' to capture and classify an image, or 'q' to quit.")
