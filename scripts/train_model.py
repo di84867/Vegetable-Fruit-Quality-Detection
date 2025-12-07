@@ -14,7 +14,6 @@ if not os.path.exists(train_dir) or not os.path.exists(val_dir):
     raise FileNotFoundError("Dataset directories 'train' or 'validation' do not exist. Please check the dataset structure.")
 
 # Data augmentation for training
-
 train_datagen = ImageDataGenerator(
     rescale=1.0/255,
     rotation_range=30,
