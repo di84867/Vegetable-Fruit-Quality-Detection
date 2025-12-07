@@ -2,8 +2,6 @@ import tensorflow as tf
 import numpy as np
 import os
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
-
-# Reconstruct the model architecture
 from tensorflow.keras.applications import MobileNetV2
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, GlobalAveragePooling2D
