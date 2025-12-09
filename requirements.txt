@@ -6,3 +6,4 @@ scikit-learn
 jupyter
 Pillow
 
+Python==3.12.0
