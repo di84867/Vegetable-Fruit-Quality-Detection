@@ -6,3 +6,7 @@ scikit-learn
 jupyter
 Pillow
 
+<<<<<<< HEAD
+=======
+Python==3.13.11
+>>>>>>> 16436083f250ad59bd42dd9f56efa1832989bd8a
