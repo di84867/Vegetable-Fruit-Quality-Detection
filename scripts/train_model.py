@@ -62,6 +62,7 @@ model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accur
 history = model.fit(train_data, validation_data=val_data, epochs=10)
 
 # Save the model
-os.makedirs('models', exist_ok=True)
-model.save('models/fruits_vegetables_model.h5')
-print("Model training complete. Saved to models/fruits_vegetables_model.h5.")
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+model_path = os.path.join(project_root, 'fruits_veg_model.h5')
+model.save(model_path)
+print(f"Model training complete. Saved to {model_path}.")

@@ -1,57 +1,31 @@
 import cv2
 import numpy as np
-import tensorflow as tf
-from tensorflow.keras.applications import MobileNetV2
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, GlobalAveragePooling2D
+from .model_utils import load_model, CLASS_LABELS
 
-base_model = MobileNetV2(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
-base_model.trainable = False
+def run_camera_classification():
+    """Initializes camera and runs real-time classification loop."""
+    model = load_model()
+    cap = cv2.VideoCapture(0)
+    print("\nPress 'c' to capture and classify an image, or 'q' to quit.")
+    
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            print("Error: Could not read frame from camera.")
+            break
+        
+        cv2.imshow('Camera Feed', frame)
+        key = cv2.waitKey(1) & 0xFF
 
-model = Sequential([
-    base_model,
-    GlobalAveragePooling2D(),
-    Dense(256, activation='relu'),
-    Dropout(0.3),
-    Dense(4, activation='softmax')  
-])
-
-# Load the weights
-model.load_weights('fruits_veg_model.h5')
-
-# Class labels
-class_labels = ['Fresh Fruit', 'Fresh Vegetable', 'Rotten Fruit', 'Rotten Vegetable']
-
-# Start video capture
-cap = cv2.VideoCapture(0)
-
-print("Press 'c' to capture and classify an image, or 'q' to quit.")
-
-while True:
-    ret, frame = cap.read()
-    if not ret:
-        break
-
-    # Display the live video feed
-    cv2.imshow('Camera Feed', frame)
-
-    # Wait for user input
-    key = cv2.waitKey(1)
-    if key == ord('c'):  # Capture and classify
-        img = cv2.resize(frame, (224, 224))
-        img = np.expand_dims(img, axis=0) / 255.0
-
-        # Perform prediction
-        predictions = model.predict(img)
-        label = class_labels[np.argmax(predictions)]
-        confidence = np.max(predictions) * 100
-
-        print(f"Predicted: {label} ({confidence:.2f}% confidence)")
-        cv2.putText(frame, f"{label} ({confidence:.2f}%)", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
-        cv2.imshow('Prediction', frame)
-        cv2.waitKey(2000)  # Display for 2 seconds
-    elif key == ord('q'):  # Quit
-        break
-
-cap.release()
-cv2.destroyAllWindows()
+        if key == ord('c'):
+            img = cv2.resize(frame, (224, 224))
+            img_array = np.expand_dims(img, axis=0) / 255.0
+            predictions = model.predict(img_array)
+            label = CLASS_LABELS[np.argmax(predictions)]
+            confidence = np.max(predictions) * 100
+            print(f"-> Predicted: {label} ({confidence:.2f}% confidence)")
+        elif key == ord('q'):
+            break
+            
+    cap.release()
+    cv2.destroyAllWindows()
