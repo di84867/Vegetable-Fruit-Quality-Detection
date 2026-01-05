@@ -6,4 +6,6 @@ scikit-learn
 jupyter
 Pillow
 
-Python==3.13.11
+streamlit
+pyinstaller
+watchdog

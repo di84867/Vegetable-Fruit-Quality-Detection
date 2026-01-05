@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+.env
+
+# VS Code
+.vscode/
+
+# Project specific
+uploads/
+debug_env.py
+env_info.txt
+env_details.txt
+py_versions.txt

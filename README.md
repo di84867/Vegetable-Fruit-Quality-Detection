@@ -2,5 +2,57 @@ This project leverages a regular camera device to perform real-time quality dete
 
 Core features include:
 
-Continuous, real-time monitoring of produce quality
-Automatic classification of fruits and vegetables based on color, texture, and visible defects.
+- Continuous, real-time monitoring of produce quality
+- Automatic classification of fruits and vegetables based on color, texture, and visible defects.
+
+## Installation & Setup
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/YourUsername/vegetables-fruits-quality-detection.git
+   cd vegetables-fruits-quality-detection
+   ```
+
+2. **Create a Virtual Environment (Optional but Recommended):**
+
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
+**To run the Desktop GUI Application:**
+
+```bash
+python gui_app.py
+```
+
+**To run the Command Line Interface:**
+
+```bash
+python main.py
+```
+
+**To run the Web Application:**
+
+```bash
+streamlit run web_app.py
+```
+
+## Building the Windows Executable
+
+To create a standalone `.exe` file that runs without installing Python:
+
+1.  Double-click `launcher.bat` and select **Option 1**.
+2.  Or run manually:
+    ```bash
+    pyinstaller --noconfirm --onefile --windowed --name "FruitQualityChecker" --add-data "fruits_veg_model.h5;." --add-data "scripts;scripts" gui_app.py
+    ```
+3.  The executable will be in the `dist/` folder.
