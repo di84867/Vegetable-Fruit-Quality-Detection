@@ -57,8 +57,14 @@ st.markdown("""
 def get_model():
     return load_model()
 
+import os
+
 def sidebar_info():
-    st.sidebar.image("assets/profile_pic.jpg", use_container_width=True)
+    if os.path.exists("assets/profile_pic.jpg"):
+        st.sidebar.image("assets/profile_pic.jpg", use_container_width=True)
+    else:
+        st.sidebar.warning("Profile picture not found")
+        
     st.sidebar.title("About the Author")
     st.sidebar.markdown("**Divyansh Singh**")
     st.sidebar.markdown(

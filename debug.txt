@@ -1,0 +1,10 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 1A60-6009
+
+ Directory of C:\Users\singh\.gemini\antigravity\brain\5b66c430-11f0-4731-b755-0f2924d916c0
+
+05-01-2026  09:10    <DIR>          .
+05-01-2026  09:10    <DIR>          ..
+05-01-2026  09:10            31,901 uploaded_image_1767584435067.jpg
+               1 File(s)         31,901 bytes
+               2 Dir(s)  118,384,627,712 bytes free
