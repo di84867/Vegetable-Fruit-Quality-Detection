@@ -53,6 +53,13 @@ To create a standalone `.exe` file that runs without installing Python:
 1.  Double-click `launcher.bat` and select **Option 1**.
 2.  Or run manually:
     ```bash
-    pyinstaller --noconfirm --onefile --windowed --name "FruitQualityChecker" --add-data "fruits_veg_model.h5;." --add-data "scripts;scripts" gui_app.py
+
     ```
 3.  The executable will be in the `dist/` folder.
+
+## Author
+
+**Divyansh Singh**
+
+- [LinkedIn](https://www.linkedin.com/in/divyansh-singh-26a95a248/)
+- [GitHub](https://github.com/di84867)

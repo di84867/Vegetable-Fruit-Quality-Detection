@@ -58,6 +58,10 @@ class QualityCheckerApp:
         self.upload_button = Button(button_frame, text="Upload and Classify Image", font=self.button_font, command=self.upload_and_classify, bg="#4CAF50", fg="white", relief="flat", padx=10, pady=5)
         self.upload_button.pack(side="right", expand=True, padx=10)
 
+        # Footer
+        footer_label = Label(self.root, text="Developed by Divyansh Singh", font=("Helvetica", 10), bg="#F0F0F0", fg="#888")
+        footer_label.pack(side="bottom", pady=10)
+
     def toggle_camera(self):
         if self.camera_active:
             # --- Stop Camera ---

@@ -57,7 +57,22 @@ st.markdown("""
 def get_model():
     return load_model()
 
+def sidebar_info():
+    st.sidebar.image("assets/profile_pic.jpg", use_container_width=True)
+    st.sidebar.title("About the Author")
+    st.sidebar.markdown("**Divyansh Singh**")
+    st.sidebar.markdown(
+        """
+        Connect with me:
+        - [LinkedIn](https://www.linkedin.com/in/divyansh-singh-26a95a248/)
+        - [GitHub](https://github.com/di84867)
+        """
+    )
+    st.sidebar.markdown("---")
+    st.sidebar.info("This application uses Deep Learning to detect the quality of fruits and vegetables.")
+
 def main():
+    sidebar_info()
     st.title("🍎 Fruit & Vegetable Quality Checker")
     st.markdown("---")
 
