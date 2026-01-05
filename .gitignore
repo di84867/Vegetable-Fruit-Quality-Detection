@@ -17,3 +17,9 @@ debug_env.py
 env_info.txt
 env_details.txt
 py_versions.txt
+
+# Streamlit & Build
+.streamlit/
+dist/
+build/
+*.spec
